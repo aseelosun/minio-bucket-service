@@ -1,5 +1,5 @@
 from fastapi import APIRouter,Query
-from .minio_client import create_bucket, list_buckets
+from .minio_client import create_bucket, list_buckets, remove_bucket
 
 router = APIRouter()
 
@@ -10,3 +10,7 @@ def create_new_bucket(bucket_name: str, enable_versioning: bool = Query(False)):
 @router.get("/buckets")
 def get_buckets():
     return list_buckets()
+
+@router.delete("/buckets")
+def delete_bucket(bucket_name: str):
+    return remove_bucket(bucket_name)

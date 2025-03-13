@@ -20,7 +20,7 @@ def create_bucket(bucket_name: str, enable_versioning: bool = False ):
                 Bucket=bucket_name,
                 VersioningConfiguration={"Status": "Enabled"}
             )
-            
+
         return {"message": f"Bucket '{bucket_name}' created successfully."}
     except s3_client.exceptions.BucketAlreadyOwnedByYou:
         return {"error": f"Bucket '{bucket_name}' already exists."}
@@ -33,5 +33,15 @@ def list_buckets():
     try:
         response = s3_client.list_buckets()
         return {"buckets": [bucket["Name"] for bucket in response["Buckets"]]}
+    except (BotoCoreError, NoCredentialsError) as e:
+        return {"error": str(e)}
+
+def remove_bucket(bucket_name: str):
+    """Remove a bucket in MinIO"""
+    try:
+        s3_client.delete_bucket(Bucket=bucket_name)
+        return {"message": f"Bucket '{bucket_name}' removed successfully."}
+    except s3_client.exceptions.NoSuchBucket:
+        return {"error": f"Bucket '{bucket_name}' does not exist."}
     except (BotoCoreError, NoCredentialsError) as e:
         return {"error": str(e)}

@@ -8,6 +8,8 @@ def test_create_bucket():
     response = client.post("/buckets?bucket_name=test-bucket")
     assert response.status_code == 200
     assert "message" in response.json()
+    client.delete("/buckets?bucket_name=test-bucket")
+
 
 def test_list_buckets():
     response = client.get("/buckets")
