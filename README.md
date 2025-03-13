@@ -11,7 +11,7 @@ This is a RESTful API for creating and listing MinIO buckets.
 ## 🛠️ Setup
 1. Clone the repository:
    ```sh
-   git clone https://github.com/yourusername/minio-bucket-service.git
+   git clone https://github.com/aseelosun/minio-bucket-service.git
    cd minio-bucket-service
 2. Create `.env` from `.env.template`  
    **⚠️ Warning**: Access key length should be at least 3, and secret key length at least 8 characters
