@@ -24,7 +24,7 @@ This is a RESTful API for creating, deleting and listing MinIO buckets.
    **⚠️ Warning**: Access key length should be at least 3, and secret key length at least 8 characters
 4. Run with Docker:
    ```sh
-   docker compose up --build
+   docker compose up --build -d 
    ```
 5. Test the API:
    ```sh
@@ -37,4 +37,5 @@ This is a RESTful API for creating, deleting and listing MinIO buckets.
    ```sh
    docker exec minio-bucket-service pytest
    ```
+7. You can also access the MinIO UI at [http://localhost:9001/](http://localhost:9001/) in your browser. 
 
