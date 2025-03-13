@@ -1,7 +1,7 @@
 # 🚀 MinIO Bucket Service
 
 ## 📋 Description
-This is a RESTful API for creating and listing MinIO buckets.
+This is a RESTful API for creating, deleting and listing MinIO buckets.
 
 ## ⚙️ Technologies
 - FastAPI
@@ -31,6 +31,7 @@ This is a RESTful API for creating and listing MinIO buckets.
    curl -X POST "http://127.0.0.1:8000/buckets?bucket_name=my-versioned_bucket&enable_versioning=true"
    curl -X POST "http://127.0.0.1:8000/buckets?bucket_name=my-bucket"
    curl -X GET "http://127.0.0.1:8000/buckets"
+   curl -X DELETE "http://127.0.0.1:8000/buckets?bucket_name=my-bucket"
    ```
 6. Run tests:
    ```sh
