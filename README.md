@@ -1,14 +1,14 @@
 # 🚀 MinIO Bucket Service
 
-## Description
+## 📋 Description
 This is a RESTful API for creating and listing MinIO buckets.
 
-## 📋 Technologies
+## ⚙️ Technologies
 - FastAPI
 - MinIO (via boto3)
 - Docker & Docker Compose
 
-## ⚙️ Setup
+## 🛠️ Setup
 1. Clone the repository:
    ```sh
    git clone https://github.com/yourusername/minio-bucket-service.git
