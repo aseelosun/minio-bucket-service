@@ -20,7 +20,7 @@ This is a RESTful API for creating and listing MinIO buckets.
    docker compose up --build
 4. Test the API:
    ```sh
-   curl -X POST "http://127.0.0.1:8000/buckets?bucket_name=my-versioned_bucket&enable_versioning=true"
+   curl -X POST "http://127.0.0.1:8000/buckets?bucket_name=my-versioned-bucket&enable_versioning=true"
    curl -X POST "http://127.0.0.1:8000/buckets?bucket_name=my-bucket"
    curl -X GET "http://127.0.0.1:8000/buckets"
 4. Run tests:
